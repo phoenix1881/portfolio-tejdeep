@@ -23,7 +23,8 @@ Truly marvelous!
 from universe import earth
 
 show(earth.get("paul"))
-``` -->
+``` 
+-->
 
 ## Tejdeep Chippa
 

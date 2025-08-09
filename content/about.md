@@ -1,4 +1,3 @@
-
 ## Tejdeep Chippa
 
 !Image
@@ -17,26 +16,33 @@ At my core, I’m someone who never stops at “Do I know this or not?” — I 
 
 ## 💻 My Interests
 
-* Machine Learning & AI — from self-supervised learning to deployment pipelines.
+* **Machine Learning & AI** — from self-supervised learning to deployment pipelines.
 
-* MLOps & Systems Engineering — building scalable, production-ready ML workflows.
+* **MLOps & Systems Engineering** — building scalable, production-ready ML workflows.
 
-* Problem-Solving Challenges — from Kaggle competitions to algorithm puzzles.
+* **Problem-Solving Challenges** — from Kaggle competitions to algorithm puzzles.
 
-* Sports & Team Activities — cricket, badminton, table tennis, and casual football.
+* **Sports & Team Activities** — cricket, badminton, table tennis, and casual football.
 
-* Leadership & Collaboration — leading projects, mentoring peers, and organizing events.
+* **Leadership & Collaboration** — leading projects, mentoring peers, and organizing events.
 
 ## 🤹🏻 Fields I've Explored
 
-* Cybersecurity — OAuth systems, threat modeling, secure identity management.
+* **Cybersecurity** — OAuth systems, threat modeling, secure identity management.
 
-* Machine Learning — computer vision, NLP, adversarial robustness, transfer learning.
+* **Machine Learning** — computer vision, NLP, adversarial robustness, transfer learning.
 
-* Deep Learning Architectures — CNNs, Transformers, Vision-Language Models.
+* **Deep Learning Architectures** — CNNs, Transformers, Vision-Language Models.
 
-* Robotics — motion planning, SLAM, sensor fusion, autonomous navigation.
+* **Robotics** — motion planning, SLAM, sensor fusion, autonomous navigation.
 
-* Digital Image Processing — filtering, segmentation, object tracking.
+* **Digital Image Processing** — filtering, segmentation, object tracking.
 
-* Game Theory — strategic decision-making and multi-agent behavior.
+* **Game Theory** — strategic decision-making and multi-agent behavior.
+
+
+## Contact
+
+* 📧 [tejdeep2003@gmail.com](mailto:tejdeep2003@gmail.com)
+* 📱 [336-480-5958](tel:3364805958)
+

@@ -14,7 +14,8 @@ Outside academics, I believe in balance. I play multiple sports, take on leaders
 At my core, I’m someone who never stops at “Do I know this or not?” — I aim to learn as much as I can, as quickly as I can, and bring it to a level where it’s truly usable. For me, every project is a chance to explore, adapt, and grow.
 
 
-## My Interests
+
+## 💻 My Interests
 
 * Machine Learning & AI — from self-supervised learning to deployment pipelines.
 
@@ -26,7 +27,7 @@ At my core, I’m someone who never stops at “Do I know this or not?” — I 
 
 * Leadership & Collaboration — leading projects, mentoring peers, and organizing events.
 
-## Fields I've Explored
+## 🤹🏻 Fields I've Explored
 
 * Cybersecurity — OAuth systems, threat modeling, secure identity management.
 

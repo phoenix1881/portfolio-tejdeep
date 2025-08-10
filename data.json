@@ -19,7 +19,7 @@
             "icon": "bi bi-suitcase-lg-fill",
             "name": "Work Experience",
             "link": "/experience",
-            "content": "content/experience.md"
+            "content": "content/experience.html"
         },
         {
             "icon": "🔥",

@@ -7,7 +7,7 @@
             "icon": "./assets/images/home/paul.png",
             "name": "About",
             "link": "/about",
-            "content": "content/about.md"
+            "content": "content/about.html"
         },
         {
             "icon": "📖",

@@ -23,7 +23,7 @@
         },
                 {
             "icon": "🔥",
-            "name": "Other Interests"
+            "name": "Other Interests",
             "link": "/other",
             "content": "content/other.html"
         }

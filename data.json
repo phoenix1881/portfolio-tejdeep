@@ -1,10 +1,10 @@
 {
     "name": "Tejdeep's portfolio",
-    "icon": "./assets/images/home/logo.png",
+    "icon": "./assets/images/home/tej.png",
 
     "pages": [
         {
-            "icon": "./assets/images/home/logo.png",
+            "icon": "./assets/images/home/tej.png",
             "name": "About",
             "link": "/about",
             "content": "content/about.html"

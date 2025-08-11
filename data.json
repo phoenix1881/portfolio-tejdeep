@@ -10,34 +10,22 @@
             "content": "content/about.html"
         },
         {
-            "icon": "📖",
-            "name": "Blogs",
-            "link": "/blogs",
-            "content": "content/blogs.html"
-        },
-        {
-            "icon": "bi bi-suitcase-lg-fill",
+            "icon": "👨🏻‍💻",
             "name": "Work Experience",
             "link": "/experience",
             "content": "content/experience.html"
         },
         {
-            "icon": "🔥",
-            "name": "Open source",
-            "link": "/open-source",
+            "icon": "⚙️",
+            "name": "Projects",
+            "link": "/projects",
             "content": "content/projects.html"
         },
-        {
-            "icon": "✨",
-            "name": "skills",
-            "link": "/skills",
-            "content": "content/skills.md"
-        },
-        {
-            "icon": "✉️",
-            "name": "Contact",
-            "link": "/contact",
-            "content": "content/contact.md"
+                {
+            "icon": "🔥",
+            "name": "Other Interests"
+            "link": "/other",
+            "content": "content/other.html"
         }
     ]
 

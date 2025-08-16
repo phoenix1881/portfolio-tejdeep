@@ -6,6 +6,9 @@ const searchBGContainer = document.querySelector("#search-bg-container")
 const searchContainer = document.querySelector("#search-container")
 const searchInput = document.querySelector("#search-input")
 const searchDropDown = document.querySelector("#search-dropdown")
+const sidebar = document.querySelector("#sidebar");
+const sidebarScrim = document.querySelector("#sidebar-scrim");
+
 
 const md = window.markdownit({
     breaks: true,
@@ -87,6 +90,23 @@ function buildSideBar(icon, name, link, content){
     `
 }
 
+
+function toggleSidebar(open) {
+  const isOpen = sidebar.classList.contains("tw-translate-x-0");
+  if (open === undefined) open = !isOpen;
+
+  if (open) {
+    sidebar.classList.add("tw-translate-x-0");
+    sidebarScrim.classList.remove("tw-hidden");
+    document.body.classList.add("tw-overflow-hidden");
+  } else {
+    sidebar.classList.remove("tw-translate-x-0");
+    sidebarScrim.classList.add("tw-hidden");
+    document.body.classList.remove("tw-overflow-hidden");
+  }
+}
+
+
 async function updateContent(path, icon, title, link){
 
     const body = await fetchContent(path)
@@ -103,7 +123,7 @@ async function updateContent(path, icon, title, link){
     }
 
     document.querySelector("#content-icon").innerHTML = iconElement
-    document.querySelector("#title").innerHTML = `
+    document.querySelector("#title-text").innerHTML = `
                                 <div class='tw-flex tw-gap-1'>
                                     <div class="tw-w-[20px] tw-h-[20px] tw-text-sm tw-rounded-sm tw-overflow-hidden">${iconElement}</div> 
                                     ${title}
@@ -120,6 +140,10 @@ async function updateContent(path, icon, title, link){
     })
 
     document.getElementById(link).classList.add("active")
+
+    if (window.matchMedia("(max-width: 768px)").matches) {
+        toggleSidebar(false);
+    }
 }
 
 function loadPage(pageLink){

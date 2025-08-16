@@ -135,7 +135,8 @@ async function updateContent(path, icon, title, link){
         iconElement = `<i class="${icon ?? "bi bi-file-earmark"}"></i>` // bootstrap icon class
     }
 
-    document.querySelector("#content-icon").innerHTML = iconElement
+    // document.querySelector("#content-icon").innerHTML = iconElement
+    
     // document.querySelector("#title-text").innerHTML = `
     //                             <div class='tw-flex tw-gap-1'>
     //                                 <div class="tw-w-[20px] tw-h-[20px] tw-text-sm tw-rounded-sm tw-overflow-hidden">${iconElement}</div> 

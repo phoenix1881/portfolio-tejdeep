@@ -92,41 +92,31 @@ function buildSideBar(icon, name, link, content){
 
 
 function toggleSidebar(open) {
-  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  // Collapsed if explicit inline width is 0
+  const isCollapsed = sidebar.style.width === "0px";
 
-  if (isMobile) {
-    // Mobile: slide with translate + scrim (class without breakpoint prefix)
-    const isHidden = sidebar.classList.contains("tw--translate-x-full");
-    if (open === undefined) open = isHidden; // open => show if hidden
+  // Determine target state if not provided
+  if (open === undefined) open = isCollapsed; // "open" means expand if collapsed
 
-    if (open) {
-      sidebar.classList.remove("tw--translate-x-full");  // slide in
-      sidebarScrim.classList.remove("tw-hidden");
-      document.body.classList.add("tw-overflow-hidden");
-    } else {
-      sidebar.classList.add("tw--translate-x-full");     // slide out
-      sidebarScrim.classList.add("tw-hidden");
-      document.body.classList.remove("tw-overflow-hidden");
-    }
+  if (open) {
+    // Expand: clear inline overrides so Tailwind's 240px min/max apply
+    sidebar.style.width = "";
+    sidebar.style.minWidth = "";
+    sidebar.style.maxWidth = "";
+    sidebar.style.overflow = "";
   } else {
-    // Desktop: collapse/expand with inline styles (overrides Tailwind min/max width)
-    const isCollapsed = sidebar.style.width === "0px";
-    if (open === undefined) open = isCollapsed; // open => expand if currently collapsed
-
-    if (open) {
-      sidebar.style.width = "";
-      sidebar.style.minWidth = "";
-      sidebar.style.maxWidth = "";
-      // keep content visible
-    } else {
-      sidebar.style.width = "0px";
-      sidebar.style.minWidth = "0";
-      sidebar.style.maxWidth = "0";
-      sidebar.style.overflow = "hidden";
-    }
-    // No scrim on desktop
+    // Collapse: force width to zero
+    sidebar.style.width = "0px";
+    sidebar.style.minWidth = "0";
+    sidebar.style.maxWidth = "0";
+    sidebar.style.overflow = "hidden";
   }
+
+  // We don't use a scrim anymore
+  if (sidebarScrim) sidebarScrim.classList.add("tw-hidden");
+  document.body.classList.remove("tw-overflow-hidden");
 }
+
 
 
 

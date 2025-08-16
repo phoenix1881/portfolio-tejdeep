@@ -144,9 +144,9 @@ async function updateContent(path, icon, title, link){
     //                             `
 
     document.querySelector("#title-text").innerHTML = `
-                                <div class='tw-flex tw-gap-2 tw-items-center tw-text-lg tw-font-medium'>
-                                    <div class="tw-w-[24px] tw-h-[24px] tw-rounded-sm tw-overflow-hidden">${iconElement}</div>
-                                    ${title}
+                                <div class='tw-flex tw-gap-2 tw-items-center'>
+                                    <div class="tw-w-[20px] tw-h-[20px] tw-rounded-sm tw-overflow-hidden">${iconElement}</div>
+                                    <span class="tw-text-lg tw-font-medium">${title}</span>
                                 </div>
                                 `
 

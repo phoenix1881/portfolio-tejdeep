@@ -92,19 +92,36 @@ function buildSideBar(icon, name, link, content){
 
 
 function toggleSidebar(open) {
-  const isOpen = sidebar.classList.contains("tw-translate-x-0");
-  if (open === undefined) open = !isOpen;
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-  if (open) {
-    sidebar.classList.add("tw-translate-x-0");
-    sidebarScrim.classList.remove("tw-hidden");
-    document.body.classList.add("tw-overflow-hidden");
+  if (isMobile) {
+    // Mobile: slide with translate + scrim
+    const isHidden = sidebar.classList.contains("tw--translate-x-full"); // via max-md:tw--translate-x-full
+    if (open === undefined) open = isHidden; // 'open' => show if hidden
+
+    if (open) {
+      sidebar.classList.remove("tw--translate-x-full"); // show
+      sidebarScrim.classList.remove("tw-hidden");
+      document.body.classList.add("tw-overflow-hidden");
+    } else {
+      sidebar.classList.add("tw--translate-x-full"); // hide
+      sidebarScrim.classList.add("tw-hidden");
+      document.body.classList.remove("tw-overflow-hidden");
+    }
   } else {
-    sidebar.classList.remove("tw-translate-x-0");
-    sidebarScrim.classList.add("tw-hidden");
-    document.body.classList.remove("tw-overflow-hidden");
+    // Desktop: collapse width using Tailwind classes (no CSS file)
+    const collapsedClasses = ["tw-w-0", "tw-min-w-0", "tw-max-w-0", "tw-overflow-hidden"];
+    const isCollapsed = collapsedClasses.every(c => sidebar.classList.contains(c));
+    if (open === undefined) open = isCollapsed; // 'open' => expand if collapsed
+
+    if (open) {
+      collapsedClasses.forEach(c => sidebar.classList.remove(c)); // expand to default 240px
+    } else {
+      collapsedClasses.forEach(c => sidebar.classList.add(c)); // collapse to 0px
+    }
   }
 }
+
 
 
 async function updateContent(path, icon, title, link){

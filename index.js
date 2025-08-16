@@ -95,30 +95,36 @@ function toggleSidebar(open) {
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
   if (isMobile) {
-    // Mobile: slide with translate + scrim
-    const isHidden = sidebar.classList.contains("tw--translate-x-full"); // via max-md:tw--translate-x-full
-    if (open === undefined) open = isHidden; // 'open' => show if hidden
+    // Mobile: slide with translate + scrim (class without breakpoint prefix)
+    const isHidden = sidebar.classList.contains("tw--translate-x-full");
+    if (open === undefined) open = isHidden; // open => show if hidden
 
     if (open) {
-      sidebar.classList.remove("tw--translate-x-full"); // show
+      sidebar.classList.remove("tw--translate-x-full");  // slide in
       sidebarScrim.classList.remove("tw-hidden");
       document.body.classList.add("tw-overflow-hidden");
     } else {
-      sidebar.classList.add("tw--translate-x-full"); // hide
+      sidebar.classList.add("tw--translate-x-full");     // slide out
       sidebarScrim.classList.add("tw-hidden");
       document.body.classList.remove("tw-overflow-hidden");
     }
   } else {
-    // Desktop: collapse width using Tailwind classes (no CSS file)
-    const collapsedClasses = ["tw-w-0", "tw-min-w-0", "tw-max-w-0", "tw-overflow-hidden"];
-    const isCollapsed = collapsedClasses.every(c => sidebar.classList.contains(c));
-    if (open === undefined) open = isCollapsed; // 'open' => expand if collapsed
+    // Desktop: collapse/expand with inline styles (overrides Tailwind min/max width)
+    const isCollapsed = sidebar.style.width === "0px";
+    if (open === undefined) open = isCollapsed; // open => expand if currently collapsed
 
     if (open) {
-      collapsedClasses.forEach(c => sidebar.classList.remove(c)); // expand to default 240px
+      sidebar.style.width = "";
+      sidebar.style.minWidth = "";
+      sidebar.style.maxWidth = "";
+      // keep content visible
     } else {
-      collapsedClasses.forEach(c => sidebar.classList.add(c)); // collapse to 0px
+      sidebar.style.width = "0px";
+      sidebar.style.minWidth = "0";
+      sidebar.style.maxWidth = "0";
+      sidebar.style.overflow = "hidden";
     }
+    // No scrim on desktop
   }
 }
 
